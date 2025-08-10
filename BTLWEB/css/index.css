@@ -180,3 +180,16 @@ div.advert img:hover {
   color: black;
   text-decoration: none;
 }
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Style cho điện thoại */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

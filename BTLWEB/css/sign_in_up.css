@@ -57,9 +57,11 @@
         color: white;
         border-radius: 20px;
     }
-    div table tr td button{
+
+    div table tr td button {
         background-color: green;
     }
+
     button:hover {
         filter: brightness(120%);
         transform: scale(1.02);
@@ -149,6 +151,7 @@
         padding: 80px;
         color: #ffff;
     }
+
     canvas {
         background-color: white;
         margin: 0px auto;
@@ -156,17 +159,34 @@
         width: 90%;
         border-radius: 10px;
     }
-    .advert{
+
+    .advert {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
         margin-top: 40px;
     }
-    div.advert img{
+
+    div.advert img {
         width: 30%;
         justify-content: center;
         padding: 7px;
     }
-    div.advert img:hover{
+
+    div.advert img:hover {
         scale: 120%;
+    }
+
+    @media (max-width: 1024px) {
+        body {
+            font-size: 16px;
+        }
+    }
+
+    /* Style cho điện thoại */
+    @media (max-width: 768px) {
+        body {
+            font-size: 14px;
+            padding: 10px;
+        }
     }
