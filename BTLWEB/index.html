@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data visualization website</title>
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body style="font-family: 'Times New Roman', Times, serif;">
+  <div id="home"></div>
+  <nav>
+    <ul class="menu">
+      <li id="signin2" style="display: none;"><a href="taskbar/userinformation.html"><img
+            style="width: 50px; border-radius: 100%;" src="images/LOGO/avatar.png"></a></li>
+      <li><a href="#">HOME</a></li>
+      <li><a href="taskbar/gioithieu.html">ABOUT US</a></li>
+      <li id="signin1" style="display: block;"><a href="taskbar/signin.html">SIGNIN</a></li>
+
+      <li><a href="#" id="logout" onclick="logout()" style="display: none;">SIGNOUT</a></li>
+    </ul>
+  </nav>
+
+
+
+
+  <div class="canhle">
+    <div>
+      <h1>DATA<br>VISUALIZATION</h1>
+      <hr width="350" align="left">
+      <div class="subtext">
+        <p style="font-size: small;"><i>
+            The website processes data quickly without the need<br> for complex techniques and calculations.</i></p>
+      </div>
+    </div>
+    <div><video src="images/background.mp4" autoplay muted loop class="transit"></video></div>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 45vh;">
+    <a href="#chosse" style="text-decoration: none; color: white; text-align: center;"><img
+        src="images/Screenshot 2025-07-09 143025.png" alt="" width="30px" class="transitIconSmall">
+      <p>Click here to scroll-down!</p>
+    </a>
+  </div>
+
+  <div class="space"></div>
+
+  <div class="container">
+    <div style="text-align: center;">
+      <div id="chosse">
+        <div><a href="function/business.html"><img src="images/BUIS.png" alt="" width="350px"
+              class="transitIconSmall"></a></div>
+        <p>
+          Function for businesses to process data.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div style="text-align: center;">
+      <div>
+        <a href="function/student.html"><img src="images/STU.png" alt="" width="250px" class="transitIconSmall"></a>
+
+        <p> Function for students to calculate scores.<a style="color: red;"><i>(NEW)</i></a> </p>
+
+        <a href="#home"><img src="images/daonguoc.png" alt="" width="30px" class="transitIconSmall"></a>
+      </div>
+    </div>
+  </div>
+  <div align="center" class="advert">
+    <img src="images/LOGO/DATA VISUALIZATION.png">
+    <img src="images/LOGO/ADVERTISING.png">
+    <img src="images/LOGO/ADVERTISING2.png">
+  </div>
+
+  <div style="text-align: center; font-size: small; padding: 80px;">
+    Contact information (before):09-1******, Facility of Information Technology, Ho Chi Minh Open University.
+    <br>
+    Address 1: 97 Vo Van Tan, District 3.<br>
+    Address 2: Nhon Duc Residential Area, Nha Be District.<br>
+
+    <a href="http://it.ou.edu.vn/" target="_blank" style="color:rgb(33, 138, 172)">@Facility of IT-HCM Open
+      University</a>
+  </div>
+
+  <div>
+    <a onclick="listGuide()"><img id="chatbot" src="images/chatbot.gif" style="width: 80px; border-radius: 100%;"></a>
+  </div>
+  <form id="list">
+    <ul>
+    <li><a href="pdf/Login.pdf" target="_blank">Login instructions</a></li>
+    <li><a href="pdf/CHART.pdf" target="_blank">Guide to using the chart drawing feature.</a></li>
+    <li><a href="pdf/STU.pdf" target="_blank">Guide to using the scoring feature.</a></li>
+    <i>"Wishing you a fun experience!!!
+      <br>
+    Thank you for accompanying us.</i>
+  </ul>
+  </form>
+  <script src="java/signinup.js"></script>
+  <script>window.addEventListener('DOMContentLoaded', function () {
+      const loginStatus = localStorage.getItem('isLogin');
+      if (loginStatus === 'true') {
+        document.getElementById("signin1").style.display = "none";
+        document.getElementById("signin2").style.display = "block";
+        document.getElementById("logout").style.display = "block";
+      } else {
+        document.getElementById("signin1").style.display = "block";
+        document.getElementById("signin2").style.display = "none";
+        document.getElementById("logout").style.display = "none";
+      }
+
+    });
+    function logout() {
+      localStorage.removeItem('isLogin');
+      localStorage.removeItem('currentUser');
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+
+</html>

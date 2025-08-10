@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forbusiness</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <link rel="stylesheet" href="../css/sign_in_up.css">
+  <link rel="stylesheet" href="../css/index.css">
+
+</head>
+
+<body style="color: black;">
+  <!--thanh dieu huong-->
+  <nav>
+        <ul class="menu">
+            <div id="home"></div>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../taskbar/gioithieu.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+  <h2 style="font-family: 'Times New Roman', Times, serif; color: white;" align="center">Data Processing with Charts
+  </h2>
+  <!--Xu ly bieu do-->
+
+  <div class="container">
+
+    <form>
+      <h4 align="center">Input Chart Name</h4>
+      <div>
+        <label for="chartName"> Chart Name</label>
+        <div> <input class="inputbox" type="text" name="chartName" id="chartName"></input></div>
+      </div>
+      <label for="chartType"> Chart Type</label>
+      <select id="chartType" name="chartType" onchange="showEnterChart()" required>
+        <option value="">---Choose a Chart type---</option>
+        <option value="line">Line Chart</option>
+        <option value="bar">Bar Chart</option>
+      </select>
+
+      <div id="enterChart"></div>
+    </form>
+  </div>
+  <div align="center" style=" display: block; color: white;" id="chart">
+    <h3 id="chartTitle"></h3>
+
+    <canvas id="myChart"></canvas>
+    <script src="../java/chart.js"></script>
+
+
+  </div>
+  <div align="center" class="advert">
+    <img src="../images/LOGO/DATA VISUALIZATION.png">
+    <img src="../images/LOGO/ADVERTISING.png">
+    <img src="../images/LOGO/ADVERTISING2.png">
+  </div>
+
+  <!--Dia Chi lien he-->
+  <div style="text-align: center; font-size: small; padding: 80px; color:whitesmoke">
+    Contact information (before):09-1******, Facility of Information Technology, Ho Chi Minh Open University.
+    <br>
+    Address 1: 97 Vo Van Tan, District 3.<br>
+    Address 2: Nhon Duc Residential Area, Nha Be District. <br>
+
+    </i></p>
+    <a href="http://it.ou.edu.vn/" target="_blank" style="color:rgb(33, 138, 172)">@Facility of IT-HCM Open
+      University</a>
+  </div>
+  <script src="../java/signin.js"></script>
+
+</body>
+
+</html>

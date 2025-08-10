@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userInfor</title>
+    <link rel="stylesheet" href="../css/user.css">
+    
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <div></div>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../taskbar/gioithieu.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+    <!--tao form hien thong tin nguoi dung-->
+    <div id="background" style=" font-size: large; font-family: Arial, Helvetica, sans-serif; background-image: url(../images/LOGO/7.png);
+ background-size: cover; background-repeat: no-repeat; margin-bottom: 40px;;">
+        <div style="display: flex;"><img id="hinhnen" src="../images/LOGO/3.png" style="display: flex;  
+      width: 50%; box-shadow: 8px 10px 30px 5px rgb(0, 0, 0);">
+        </div>
+    </div>
+    
+    <div >
+        <form style="border-radius: 30px; display: flex; background-color: rgb(255, 255, 255);">
+            <div align="center"><img src="../images/LOGO/avatar.png" style="width: 50%; border-radius: 1090px;"></div>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    Username:
+                </td>
+                <td id="usernameCur" style="width: 60%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    ************
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    <label>Chosse Your Class</label>
+    <select id="chonhinh">
+        <option value="1">Gold</option>
+        <option value="2">Silver</option>
+        <option value="3">Bronze</option>
+        <option value="4">Special</option>
+    </select>
+    <div style="text-align: center; font-size: small; padding: 80px;">
+        Contact information (before):09-1******, Facility of Information Technology, Ho Chi Minh Open University.
+        <br>
+        Address 1: 97 Vo Van Tan, District 3.<br>
+        Address 2: Nhon Duc Residential Area, Nha Be District.<br>
+
+        <a href="http://it.ou.edu.vn/" target="_blank" style="color:rgb(33, 138, 172)">@Facility of IT-HCM Open
+            University</a>
+    </div>
+    <script src="../java/signinup.js"></script>
+    <script>
+        window.onload = function () {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            document.getElementById('usernameCur').innerText = currentUser.name;
+            document.getElementById('passwordCur').innerText = currentUser.password;
+        }
+
+
+        const select = document.getElementById("chonhinh");
+        const hinhanh = document.getElementById("hinhnen");
+        const background = document.getElementById("background");
+
+
+        select.addEventListener("change", function () {
+            const id = this.value; // Lấy giá trị được chọn
+            hinhanh.src = `../images/LOGO/${id}.png`; // Gán ảnh
+            background.style.backgroundImage = `url('../images/LOGO/${Number(id) + 4}.png`;
+            hinhanh.style.display = 'block';
+            if(id=="4"){
+                hinhanh.src = `../images/LOGO/${id}.gif`; // Gán ảnh
+            background.style.backgroundImage = `url('../images/LOGO/${Number(id) + 4}.gif`;
+            }
+        });
+    </script>
+</body>
+
+</html>

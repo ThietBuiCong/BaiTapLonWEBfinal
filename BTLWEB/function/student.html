@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forstudent</title>
+    <link rel="stylesheet" href="../css/sign_in_up.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="../java/calculate.js"></script>
+</head>
+
+<body style="color: rgb(0, 0, 0); font-size: large;">
+    <!--thanh dieu huong-->
+    <nav>
+        <ul class="menu">
+            <div id="home"></div>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../taskbar/gioithieu.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+    <h1 align="center" style="color: white;">Calculate scores for students</h1>
+
+    <div align="center">
+        <form style="width: 50%; ">
+            <label>Choose your education level</label>
+            <select id="selectlevel" onchange="changeform()">
+                <option value="">-- Choose level --</option>
+                <option value="highschool">High school</option>
+                <option value="college">College/University</option>
+            </select>
+            <div id="form"></div>
+            <div id="output" style=" margin-top: 20px;"></div>
+
+            <div style="display: none;" id="keyhighschool">
+                <h3>INPUT YOUR SCORES</h3>
+                <hr>
+                <table border="0" style="width: 90%; margin: auto;" id="table">
+                    <tbody style="justify-content: center;">
+                        <tr>
+                            <td style="width: 50%;">
+                                <label>Math</label>
+                                <input class="inputbox" type="number" name="math" id="math" step="0.1" max="10" min="0">
+                            </td>
+                            <td>
+                                <label>Literature</label>
+                                <input class="inputbox" type="number" name="literature" id="literature" step="0.1"
+                                    max="10" min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Foreign Language 1</label>
+                                <input class="inputbox" type="number" name="foreign" id="foreign" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                            <td>
+                                <label>Physics</label>
+                                <input class="inputbox" type="number" name="physics" id="physics" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Chemistry</label>
+                                <input class="inputbox" type="number" name="chemistry" id="chemistry" step="0.1"
+                                    max="10" min="0">
+                            </td>
+                            <td>
+                                <label>Biology</label>
+                                <input class="inputbox" type="number" name="biology" id="biology" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>History</label>
+                                <input class="inputbox" type="number" name="history" id="history" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                            <td>
+                                <label>Geography</label>
+                                <input class="inputbox" type="number" name="georaphy" id="geography" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Economic and legal education</label>
+                                <input class="inputbox" type="number" name="economic" id="economic" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                            <td>
+                                <label>Computer science</label>
+                                <input class="inputbox" type="number" name="computer" id="computer" step="0.1" max="10"
+                                    min="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Priority Area</label>
+                                <div></div>
+                                <select id="area" required>
+                                    <option value="">--Choose area--</option>
+                                    <option value="0.75">Area 1 + 0,75</option>
+                                    <option value="0.25">Area 2 + 0,25</option>
+                                    <option value="0.5">Area 2 - suburban area + 0,5</option>
+                                    <option value="0">Area 3</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label>Priority Category</label>
+                                <div></div>
+                                <select id="priority">
+                                    <option value="">--None--</option>
+                                    <option value="2">Priority Category 01 + 2</option>
+                                    <option value="1">Priority Category 02 + 1</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div align="center">
+                    <button type="button" style="width: 200px; background-color: blue;" onclick="calscores()"
+                        id="keybutton">Calculate your scores</button>
+                </div>
+            </div>
+            <div style="display: none;" id="keyuniversity">
+                <hr>
+                <table border="0" style="display: block; width: 90%;" id="formGpa">
+                    <tr>
+                        <td style="width: 90%;">
+                            <label>Choose your University</label>
+                            <select id="university">
+                                <option value="null">====Chosse your university====</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Total number of credits for the entire course:</p>
+                        </td>
+                        <td>
+                            <input class="inputbox" name="total" id="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Total credits earned:</p>
+                        </td>
+                        <td>
+                            <input class="inputbox" name="credits" id="credits" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>The number of points you have earned (GPA 4.0):</p>
+                        </td>
+                        <td>
+                            <input class="inputbox" max="4" name="gpa" id="gpa" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" onclick="calGPA()">Calulate your scores</button></td>
+                    </tr>
+                </table>
+
+            </div>
+        </form>
+    </div>
+    <div align="center" class="advert">
+        <img src="../images/LOGO/11-1716455258.png">
+        <img src="../images/LOGO/500228792_1032190399057214_8874904740149411189_n.png">
+        <img src="../images/LOGO/325479.1kx.png">
+    </div>
+    </div>
+    </div>
+
+    <!--Dia Chi lien he-->
+    <div style="text-align: center; font-size: small; padding: 80px; color:whitesmoke">
+        Contact information (before):09-1******, Facility of Information Technology, Ho Chi Minh Open University.
+        <br>
+        Address 1: 97 Vo Van Tan, District 3.<br>
+        Address 2: Nhon Duc Residential Area, Nha Be District. <br>
+
+        </i></p>
+        <a href="http://it.ou.edu.vn/" target="_blank" style="color:rgb(33, 138, 172)">@Facility of IT-HCM Open
+            University</a>
+    </div>
+    <script src="../java/signin.js"></script>
+</body>
+
+</html>

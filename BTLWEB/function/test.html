@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    #chatbot{
+      position: fixed;
+      bottom: 20px;
+      left: 90%;
+      z-index: 2;
+    }
+    #chatbot:hover{
+      scale: 110%;
+    }
+    #list{
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      left: 65%;
+      background-color: white;
+      border-radius: 50px;
+    }
+    #list ul li{
+      list-style: disc;
+      padding: 5px;
+      color: black;
+      text-decoration: none;
+    }
+    #list ul li a{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body style="background-color: black;">
+  <div>
+    <a onclick="listGuide()"><img id="chatbot" src="../images/chatbot.gif" style="width: 80px; border-radius: 100%;"></a>
+  </div>
+  <form id="list">
+    <ul>
+    <li><a href="">Login instructions</a></li>
+    <li><a href="">Guide to using the chart drawing feature.</a></li>
+    <li><a href="">Guide to using the scoring feature.</a></li>
+    <i>Wishing you a fun experience!!!<br>
+    Thank you for accompanying us.</i>
+  </ul>
+  </form>
+  <script>
+   function listGuide() {
+  const list = document.getElementById("list");
+  if (list.style.display === "none" || list.style.display === "") {
+    list.style.display = "block";
+  } else {
+    list.style.display = "none";
+  }
+}
+  </script>
+</body>
+
+</html>

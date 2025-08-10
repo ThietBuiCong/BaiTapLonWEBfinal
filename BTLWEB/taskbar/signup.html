@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/sign_in_up.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body style="color: black;">
+    <nav>
+        <ul class="menu">
+            <div id="home"></div>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../taskbar/gioithieu.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+
+    <!--Form điền đăng ký-->
+    <div class="container" style="flex-direction: column;">
+        <form method="post">
+            <h3>
+                <div class="div-header">Sign up for Data Visualization</div>
+            </h3>
+            <div>
+                <label for="username">Username</label>
+                <div>
+                    <input class="inputbox" type="text" id="inputUsername"  required placeholder="EX: NGUYEN VAN A"></input>
+                </div>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <div>
+                    <input class="inputbox" type="email" id="email"  required placeholder="EX: nguyenvana@gmail.com"></input>
+                </div>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <div>
+                    <input class="inputbox" type="password" id="inputPassword1"  required></input>
+                </div>
+            </div>
+            <div>
+                <label for="password">Confirm Password</label>
+                <div>
+                    <input class="inputbox" type="password" id="inputPassword2" required></input>
+                </div>
+            </div>
+            <div align="center"><button style="width: 50%; background-color: black;" class="inputbox" type="button" onclick="saveData()">Create my account</button></div>
+            <p align="middle">Already have an account? <a href="signin.html">Sign in</a></p>
+
+        </form>
+
+
+        <div style="text-align: center; font-size: small; padding: 80px; color: white;">
+
+            Contact information (before):09-1******, Facility of Information Technology, Ho Chi Minh Open University.
+           <br>
+           Address 1: 97 Vo Van Tan, District 3.<br>
+           Address 2: Nhon Duc Residential Area, Nha Be District.<br>
+           <a href="http://it.ou.edu.vn/" target="_blank" style="color:rgb(33, 138, 172)">@Facility of IT-HCM Open University</a>
+        </div>
+    </div>
+    <script src="../java/signinup.js"></script>
+
+</body>
+
+</html>
